@@ -1,0 +1,19 @@
+procurement_policy:
+  name: "SB_DVBE_Compliance_Check"
+  description: "Enforce 25% SB and 3% DVBE participation unless waiver provided (STD 816)."
+  enforcement:
+    require_goals:
+      small_business: 0.25
+      dvbe: 0.03
+    waiver_form_required: true
+    data_sources:
+      - Cal eProcure
+      - SB/DVBE Emergency Registry
+  roles:
+    - buyer
+    - advocate
+    - procurement_officer
+  flags:
+    - below_goal_alert
+    - waiver_required_notice
+    - auto_notify_advocate
